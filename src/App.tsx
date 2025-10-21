@@ -2,9 +2,9 @@ import { useState } from 'react'
 
 import 'bootstrap/dist/js/bootstrap.js'
 
-import UstalStyl from './komponenty/UstalStyl/UstalStyl'
+import UstalStyl from './komponenty/UstalStyl'
 import { dostępneStyle } from './dostepneStyle'
-import WybieraczStylu from './komponenty/WybieraczStylu/WybieraczStylu'
+import WybieraczStylu from './komponenty/WybieraczStylu'
 
 function App() {
 	const [styl, setStyl] = useState(dostępneStyle[0])
@@ -61,10 +61,10 @@ function App() {
 			<UstalStyl styl={styl} ciemny={czyCiemny} />
 			<nav className="navbar navbar-expand-lg text-bg-primary mb-4">
 				<div className="container-fluid">
-					<div className="navbar-brand text-reset" href="#">
+					<div className="navbar-brand text-reset">
 						Lista ToDo
 					</div>
-					<div className="text-reset" href="#">
+					<div className="text-reset">
 						Zadania: 2/5
 					</div>
 				</div>
