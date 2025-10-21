@@ -24,8 +24,8 @@ function WybieraczStylu(props: {
 		props.zmieniarkaStylu((_) => nowyStyl)
 	}
 
-	const opcje = dostępneStyle.map((styl, numer) => (
-		<option value={numer} key={styl}>
+	const opcje = dostępneStyle.map((styl) => (
+		<option value={styl} key={styl}>
 			{zDuzej(styl)}
 		</option>
 	))
