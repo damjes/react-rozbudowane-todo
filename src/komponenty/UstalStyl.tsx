@@ -1,8 +1,4 @@
-import { useState } from 'react'
-
 import 'bootstrap/dist/js/bootstrap.js'
-
-import { dostępneStyle } from '../../dostepneStyle.ts'
 
 function UstalStyl(props: { ciemny: boolean; styl: string }) {
 	const urlStylu =
