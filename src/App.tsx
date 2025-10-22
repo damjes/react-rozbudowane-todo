@@ -5,13 +5,14 @@ import 'bootstrap/dist/js/bootstrap.js'
 import UstalStyl from './komponenty/UstalStyl'
 import { dostępneStyle } from './dostepneStyle'
 import WybieraczStylu from './komponenty/WybieraczStylu'
+import TodoLista from './komponenty/TodoLista'
 
 function App() {
 	const [styl, setStyl] = useState(dostępneStyle[0])
 	const [czyCiemny, setCzyCiemny] = useState(true)
 
 	const strony = [
-		{ nazwa: 'Zadania', komponent: <p>Zadania</p> },
+		{ nazwa: 'Zadania', komponent: <TodoLista /> },
 		{
 			nazwa: 'Ustawienia',
 			komponent: (
