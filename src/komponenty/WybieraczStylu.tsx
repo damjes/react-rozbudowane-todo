@@ -1,4 +1,4 @@
-import { dostępneStyle } from '../dostepneStyle.ts'
+import { dostępneStyle } from '../moduły/dostepneStyle.ts'
 
 function zDuzej(napis: string) {
 	return napis.charAt(0).toUpperCase() + napis.slice(1)

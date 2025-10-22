@@ -3,7 +3,7 @@ import { useState } from 'react'
 import 'bootstrap/dist/js/bootstrap.js'
 
 import UstalStyl from './komponenty/UstalStyl'
-import { dostępneStyle } from './dostepneStyle'
+import { dostępneStyle } from './moduły/dostepneStyle'
 import WybieraczStylu from './komponenty/WybieraczStylu'
 import TodoLista from './komponenty/TodoLista'
 
