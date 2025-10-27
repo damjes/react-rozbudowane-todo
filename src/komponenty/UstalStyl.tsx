@@ -3,8 +3,8 @@ import 'bootstrap/dist/js/bootstrap.js'
 function UstalStyl(props: { ciemny: boolean; styl: string }) {
 	const urlStylu =
 		props.styl === 'bootstrap'
-			? '../node_modules/bootstrap/dist/css/bootstrap.css'
-			: `../node_modules/bootswatch/dist/${props.styl}/bootstrap.css`
+			? '/node_modules/bootstrap/dist/css/bootstrap.css'
+			: `/node_modules/bootswatch/dist/${props.styl}/bootstrap.css`
 
 	const jasnyCiemny = props.ciemny ? 'dark' : 'light'
 
