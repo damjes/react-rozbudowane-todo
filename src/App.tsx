@@ -1,7 +1,5 @@
 import { useState } from 'react'
 
-import 'bootstrap/dist/js/bootstrap.js'
-
 import { dostępneStyle } from './moduły/dostępneStyle'
 
 import UstalStyl from './komponenty/UstalStyl'
