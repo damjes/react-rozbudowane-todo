@@ -36,7 +36,7 @@ function App() {
 	const [strona, setStrona] = useState<string>(strony[0].nazwa)
 
 	const taby = strony.map(bieżącaStrona => (
-		<li className='nav-item'>
+		<li className='nav-item' key={bieżącaStrona.nazwa}>
 			{strona === bieżącaStrona.nazwa ? (
 				<a
 					className='nav-link active'
