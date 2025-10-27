@@ -12,6 +12,7 @@ function TodoLista(props: {
 
 	const listaZadań = props.zadania.map(zadanie => (
 		<KomponentZadania
+			key={zadanie.id}
 			zadanie={zadanie}
 			zmieniarka={zmieniarkaPojedynczegoZadania(zadanie)}
 		/>

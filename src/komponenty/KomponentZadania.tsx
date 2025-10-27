@@ -6,7 +6,7 @@ function KomponentZadania(props: {
 	zmieniarka: Zmieniarka<Zadanie | undefined>
 }) {
 	return (
-		<li key={props.zadanie.id}>
+		<li>
 			{props.zadanie.treść} numer {props.zadanie.id}
 			<button onClick={() => props.zmieniarka(_ => undefined)}>
 				Usuń
