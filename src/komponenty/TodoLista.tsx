@@ -6,8 +6,8 @@ function TodoLista(props: {
 	zadania: Zadanie[]
 	zmieniarka: Zmieniarka<Zadanie[]>
 }) {
-	function mutatorPojedynczegoZadania(stareZadanie: Zadanie) {
-		return function (mutator: MutatorStanu<Zadanie | undefined>) {
+	function zmieniarkaPojedynczegoZadania(stareZadanie: Zadanie) {
+		return (mutator: MutatorStanu<Zadanie | undefined>) => {
 			const noweZadanie = mutator(stareZadanie)
 
 			if (noweZadanie) {
@@ -24,7 +24,10 @@ function TodoLista(props: {
 		}
 	}
 	const listaZadań = props.zadania.map(zadanie => (
-		<KomponentZadania zadanie={zadanie} />
+		<KomponentZadania
+			zadanie={zadanie}
+			zmieniarka={zmieniarkaPojedynczegoZadania(zadanie)}
+		/>
 	))
 
 	return (
