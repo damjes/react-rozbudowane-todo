@@ -58,6 +58,13 @@ function App() {
 	const komponentStrony = strony.filter((s) => s.nazwa === strona)[0]
 		.komponent
 
+	const doZrobienia = zadania.filter(zadanie => !zadanie.wykonane).length
+	const liczbaZadań = zadania.length
+
+	const napis = doZrobienia === 0 ?
+		'Wszystkie zadnia zrobione' :
+		<>Do zrobienia: {doZrobienia}/{liczbaZadań}</>
+
 	return (
 		<>
 			<UstalStyl styl={styl} ciemny={czyCiemny} />
@@ -66,9 +73,7 @@ function App() {
 					<div className="navbar-brand text-reset">
 						Lista ToDo
 					</div>
-					<div className="text-reset">
-						Zadania: 2/5
-					</div>
+					<div className="text-reset">{napis}</div>
 				</div>
 			</nav>
 			<div className="container">
