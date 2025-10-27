@@ -5,12 +5,12 @@ import { dostępneStyle } from './moduły/dostępneStyle'
 import UstalStyl from './komponenty/UstalStyl'
 import WybieraczStylu from './komponenty/WybieraczStylu'
 import TodoLista from './komponenty/TodoLista'
-import type { Zadanie } from './moduły/Zadanie'
+import { nowaListaZadań, type Zadanie } from './moduły/Zadanie'
 
 function App() {
 	const [styl, setStyl] = useState(dostępneStyle[0])
 	const [czyCiemny, setCzyCiemny] = useState(true)
-	const [zadania, setZadania] = useState<Zadanie[]>([])
+	const [zadania, setZadania] = useState<Zadanie[]>(nowaListaZadań())
 
 	const strony = [
 		{ nazwa: 'Zadania', komponent: <TodoLista zadania={zadania} zmieniarka={setZadania} /> },
