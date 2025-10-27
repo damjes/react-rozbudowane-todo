@@ -1,12 +1,14 @@
-import Zadanie from "./Zadanie"
+import type { Zadanie } from "../moduły/Zadanie"
+import type { Zmieniarka } from "../moduły/Zmieniarka"
+import KomponentZadania from "./KomponentZadania"
 
-function TodoLista() {
+function TodoLista(props: {zadania: Zadanie[], zmieniarka: Zmieniarka<Zadanie[]>}) {
     return <>
         <p>TodoLista</p>
         <ul>
-            <Zadanie />
-            <Zadanie />
-            <Zadanie />
+            <KomponentZadania />
+            <KomponentZadania />
+            <KomponentZadania />
         </ul>
     </>
 }

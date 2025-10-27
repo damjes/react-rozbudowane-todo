@@ -1,0 +1,1 @@
+export type Zmieniarka<Stan> = (f: (przed: Stan) => Stan) => void
