@@ -67,7 +67,7 @@ function App() {
 
 	const napis =
 		doZrobienia === 0 ? (
-			'Wszystkie zadnia zrobione'
+			'Wszystkie zadania zrobione'
 		) : (
 			<>
 				Do zrobienia: {doZrobienia}/{liczbaZadań}
