@@ -1,4 +1,5 @@
 import 'bootstrap/dist/js/bootstrap.js'
+import { useEffect } from 'react'
 
 function UstalStyl(props: { ciemny: boolean; styl: string }) {
 	const urlStylu =
@@ -8,12 +9,11 @@ function UstalStyl(props: { ciemny: boolean; styl: string }) {
 
 	const jasnyCiemny = props.ciemny ? 'dark' : 'light'
 
-	return (
-		<>
-			<html data-bs-theme={jasnyCiemny} />
-			<link rel='stylesheet' href={urlStylu} />
-		</>
-	)
+	useEffect(() => {
+		document.documentElement.setAttribute('data-bs-theme', jasnyCiemny)
+	}, [props.ciemny])
+
+	return <link rel='stylesheet' href={urlStylu} />
 }
 
 export default UstalStyl
