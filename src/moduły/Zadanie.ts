@@ -13,7 +13,7 @@ export type Zadanie = {
 
 export function noweZadanie(treść?: string, priorytet?: Priorytet, wykonane?: boolean): Zadanie {
     return {
-        id: 'a',
+        id: self.crypto.randomUUID(),
         treść: treść ?? 'Nowe zadanie',
         priorytet: priorytet ?? Priorytet.niski,
         wykonane: wykonane ?? false,
