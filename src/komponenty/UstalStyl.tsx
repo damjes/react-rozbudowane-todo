@@ -11,7 +11,7 @@ function UstalStyl(props: { ciemny: boolean; styl: string }) {
 	return (
 		<>
 			<html data-bs-theme={jasnyCiemny} />
-			<link rel="stylesheet" href={urlStylu} />
+			<link rel='stylesheet' href={urlStylu} />
 		</>
 	)
 }

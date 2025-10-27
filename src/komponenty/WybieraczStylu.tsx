@@ -14,39 +14,39 @@ function WybieraczStylu(props: {
 	console.log(props)
 
 	function zmienStyl() {
-		const staryIndeks = dostępneStyle.findIndex((v) => v === props.styl)
+		const staryIndeks = dostępneStyle.findIndex(v => v === props.styl)
 		const nowyIndeks = (staryIndeks + 1) % dostępneStyle.length
-		props.zmieniarkaStylu((_) => dostępneStyle[nowyIndeks])
+		props.zmieniarkaStylu(_ => dostępneStyle[nowyIndeks])
 	}
 
 	function wybierzStyl(e: React.ChangeEvent<HTMLSelectElement>) {
 		const nowyStyl = e.target.value
-		props.zmieniarkaStylu((_) => nowyStyl)
+		props.zmieniarkaStylu(_ => nowyStyl)
 	}
 
-	const opcje = dostępneStyle.map((styl) => (
+	const opcje = dostępneStyle.map(styl => (
 		<option value={styl} key={styl}>
 			{zDuzej(styl)}
 		</option>
 	))
 
 	function zmienJasnyCiemny() {
-		props.zmieniarkaCiemnego((x) => !x)
+		props.zmieniarkaCiemnego(x => !x)
 	}
 
 	return (
 		<>
-			<div className="container">
+			<div className='container'>
 				<h1>Dzień dobry!</h1>
 				<p>
-					<button className="btn btn-primary" onClick={zmienStyl}>
+					<button className='btn btn-primary' onClick={zmienStyl}>
 						Następny styl
 					</button>
 				</p>
 				<p>
 					<select
 						onChange={wybierzStyl}
-						className="form-select"
+						className='form-select'
 						value={props.styl}
 					>
 						{opcje}
@@ -55,7 +55,7 @@ function WybieraczStylu(props: {
 				<p>Styl to {zDuzej(props.styl)} </p>
 				<p>
 					<input
-						type="checkbox"
+						type='checkbox'
 						checked={props.ciemny}
 						onChange={zmienJasnyCiemny}
 					/>{' '}

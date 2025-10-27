@@ -13,7 +13,10 @@ function App() {
 	const [zadania, setZadania] = useState<Zadanie[]>(nowaListaZadań())
 
 	const strony = [
-		{ nazwa: 'Zadania', komponent: <TodoLista zadania={zadania} zmieniarka={setZadania} /> },
+		{
+			nazwa: 'Zadania',
+			komponent: <TodoLista zadania={zadania} zmieniarka={setZadania} />,
+		},
 		{
 			nazwa: 'Ustawienia',
 			komponent: (
@@ -30,13 +33,13 @@ function App() {
 
 	const [strona, setStrona] = useState<string>(strony[0].nazwa)
 
-	const taby = strony.map((bieżącaStrona) => (
-		<li className="nav-item">
+	const taby = strony.map(bieżącaStrona => (
+		<li className='nav-item'>
 			{strona === bieżącaStrona.nazwa ? (
 				<a
-					className="nav-link active"
-					href="#"
-					aria-current="page"
+					className='nav-link active'
+					href='#'
+					aria-current='page'
 					onClick={() => setStrona(bieżącaStrona.nazwa)}
 				>
 					{' '}
@@ -44,8 +47,8 @@ function App() {
 				</a>
 			) : (
 				<a
-					className="nav-link"
-					href="#"
+					className='nav-link'
+					href='#'
 					onClick={() => setStrona(bieżącaStrona.nazwa)}
 				>
 					{' '}
@@ -55,30 +58,32 @@ function App() {
 		</li>
 	))
 
-	const komponentStrony = strony.filter((s) => s.nazwa === strona)[0]
-		.komponent
+	const komponentStrony = strony.filter(s => s.nazwa === strona)[0].komponent
 
 	const doZrobienia = zadania.filter(zadanie => !zadanie.wykonane).length
 	const liczbaZadań = zadania.length
 
-	const napis = doZrobienia === 0 ?
-		'Wszystkie zadnia zrobione' :
-		<>Do zrobienia: {doZrobienia}/{liczbaZadań}</>
+	const napis =
+		doZrobienia === 0 ? (
+			'Wszystkie zadnia zrobione'
+		) : (
+			<>
+				Do zrobienia: {doZrobienia}/{liczbaZadań}
+			</>
+		)
 
 	return (
 		<>
 			<UstalStyl styl={styl} ciemny={czyCiemny} />
-			<nav className="navbar navbar-expand-lg text-bg-primary mb-4">
-				<div className="container-fluid">
-					<div className="navbar-brand text-reset">
-						Lista ToDo
-					</div>
-					<div className="text-reset">{napis}</div>
+			<nav className='navbar navbar-expand-lg text-bg-primary mb-4'>
+				<div className='container-fluid'>
+					<div className='navbar-brand text-reset'>Lista ToDo</div>
+					<div className='text-reset'>{napis}</div>
 				</div>
 			</nav>
-			<div className="container">
-				<ul className="nav nav-tabs">{taby}</ul>
-				<div className="p-3">{komponentStrony}</div>
+			<div className='container'>
+				<ul className='nav nav-tabs'>{taby}</ul>
+				<div className='p-3'>{komponentStrony}</div>
 			</div>
 		</>
 	)
