@@ -1,3 +1,4 @@
+import { useId } from 'react'
 import { dostępneStyle } from '../moduły/dostępneStyle.ts'
 
 function zDuzej(napis: string) {
@@ -10,8 +11,7 @@ function WybieraczStylu(props: {
 	ciemny: boolean
 	zmieniarkaCiemnego: (f: (czyCiemny: boolean) => boolean) => void
 }) {
-	console.log('Hej, tu wybieracz, oto moje propsy')
-	console.log(props)
+	const ciemnyId = useId()
 
 	function zmienStyl() {
 		const staryIndeks = dostępneStyle.findIndex(v => v === props.styl)
@@ -58,8 +58,9 @@ function WybieraczStylu(props: {
 						type='checkbox'
 						checked={props.ciemny}
 						onChange={zmienJasnyCiemny}
-					/>{' '}
-					ciemny
+						id={ciemnyId}
+					/>
+					<label htmlFor={ciemnyId}>&nbsp;ciemny</label>
 				</p>
 			</div>
 		</>
