@@ -15,7 +15,9 @@ function App() {
 	const strony = [
 		{
 			nazwa: 'Zadania',
-			komponent: <TodoLista zadania={zadania} zmieniarka={setZadania} />,
+			komponent: (
+				<TodoLista zadania={zadania} zmieniarkaListy={setZadania} />
+			),
 		},
 		{
 			nazwa: 'Ustawienia',
