@@ -6,8 +6,7 @@ import { nowaListaZadań, type Zadanie } from './moduły/Zadanie'
 import UstalStyl from './komponenty/UstalStyl'
 import WybieraczStylu from './komponenty/WybieraczStylu'
 import TodoLista from './komponenty/TodoLista'
-
-import 'bootstrap-icons/font/bootstrap-icons.css'
+import Ikonka from './komponenty/Ikonka'
 
 function App() {
 	const [styl, setStyl] = useState(Object.keys(dostępneStyle)[0])
@@ -15,11 +14,9 @@ function App() {
 	const [zadania, setZadania] = useState<Zadanie[]>(nowaListaZadań())
 
 	function opakuj(ikonka: string, tekst: string) {
-		const klasy = 'bi bi-' + ikonka + ' me-2'
-
 		const opis = (
 			<>
-				<i className={klasy} />
+				<Ikonka nazwa={ikonka} dodatkoweKlasy='me-2' />
 				{tekst}
 			</>
 		)

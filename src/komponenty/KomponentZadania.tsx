@@ -1,6 +1,9 @@
 import { useId } from 'react'
+
 import type { Zadanie } from '../moduły/Zadanie'
 import type { Zmieniarka } from '../moduły/Zmieniarka'
+
+import Ikonka from './Ikonka'
 
 function KomponentZadania(props: {
 	zadanie: Zadanie
@@ -34,7 +37,7 @@ function KomponentZadania(props: {
 				className='btn btn-danger btn-sm ms-2'
 				onClick={() => props.zmieniarka(_ => undefined)}
 			>
-				<i className='bi bi-trash' />
+				<Ikonka nazwa='trash' />
 			</button>
 		</li>
 	)
