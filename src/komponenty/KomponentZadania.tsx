@@ -17,6 +17,8 @@ function KomponentZadania(props: {
 		props.zmieniarka(z => (z ? { ...z, wykonane: !z.wykonane } : undefined))
 	}
 
+	function edytujNazwę() {}
+
 	const klasaOpisu = zadanie.wykonane ? 'text-decoration-line-through' : ''
 
 	return (
@@ -33,12 +35,20 @@ function KomponentZadania(props: {
 					{zadanie.treść} numer {zadanie.id}
 				</label>
 			</div>
-			<button
-				className='btn btn-danger btn-sm ms-2'
-				onClick={() => props.zmieniarka(_ => undefined)}
-			>
-				<Ikonka nazwa='trash' />
-			</button>
+			<div>
+				<button
+					className='btn btn-primary btn-sm'
+					onClick={edytujNazwę}
+				>
+					<Ikonka nazwa='feather' opis='Zmień' />
+				</button>
+				<button
+					className='btn btn-danger btn-sm ms-2'
+					onClick={() => props.zmieniarka(_ => undefined)}
+				>
+					<Ikonka nazwa='trash' opis='Usuń' />
+				</button>
+			</div>
 		</li>
 	)
 }

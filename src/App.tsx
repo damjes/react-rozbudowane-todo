@@ -13,19 +13,10 @@ function App() {
 	const [czyCiemny, setCzyCiemny] = useState(true)
 	const [zadania, setZadania] = useState<Zadanie[]>(nowaListaZadań())
 
-	function opakuj(ikonka: string, tekst: string) {
-		const opis = (
-			<>
-				<Ikonka nazwa={ikonka} dodatkoweKlasy='me-2' />
-				{tekst}
-			</>
-		)
-
-		return {
-			nazwa: tekst,
-			opis,
-		}
-	}
+	const opakuj = (ikonka: string, tekst: string) => ({
+		nazwa: tekst,
+		opis: <Ikonka nazwa={ikonka} opis={tekst} />,
+	})
 
 	const strony = [
 		{
