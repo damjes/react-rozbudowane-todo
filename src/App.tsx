@@ -14,15 +14,31 @@ function App() {
 	const [czyCiemny, setCzyCiemny] = useState(true)
 	const [zadania, setZadania] = useState<Zadanie[]>(nowaListaZadań())
 
+	function opakuj(ikonka: string, tekst: string) {
+		const klasy = 'bi bi-' + ikonka + ' me-2'
+
+		const opis = (
+			<>
+				<i className={klasy} />
+				{tekst}
+			</>
+		)
+
+		return {
+			nazwa: tekst,
+			opis,
+		}
+	}
+
 	const strony = [
 		{
-			nazwa: 'Zadania',
+			...opakuj('card-checklist', 'Zadania'),
 			komponent: (
 				<TodoLista zadania={zadania} zmieniarkaListy={setZadania} />
 			),
 		},
 		{
-			nazwa: 'Ustawienia',
+			...opakuj('sliders', 'Ustawienia'),
 			komponent: (
 				<WybieraczStylu
 					styl={styl}
@@ -32,7 +48,10 @@ function App() {
 				/>
 			),
 		},
-		{ nazwa: 'O aplikacji', komponent: <p>O aplikacji</p> },
+		{
+			...opakuj('info-circle', 'O aplikacji'),
+			komponent: <p>O aplikacji</p>,
+		},
 	]
 
 	const [strona, setStrona] = useState<string>(strony[0].nazwa)
@@ -47,7 +66,7 @@ function App() {
 					onClick={() => setStrona(bieżącaStrona.nazwa)}
 				>
 					{' '}
-					{bieżącaStrona.nazwa}
+					{bieżącaStrona.opis}
 				</a>
 			) : (
 				<a
@@ -56,7 +75,7 @@ function App() {
 					onClick={() => setStrona(bieżącaStrona.nazwa)}
 				>
 					{' '}
-					{bieżącaStrona.nazwa}
+					{bieżącaStrona.opis}
 				</a>
 			)}
 		</li>
