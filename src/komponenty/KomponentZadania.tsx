@@ -34,7 +34,7 @@ function KomponentZadania(props: {
 				className='btn btn-danger btn-sm ms-2'
 				onClick={() => props.zmieniarka(_ => undefined)}
 			>
-				Usuń
+				<i className='bi bi-trash' />
 			</button>
 		</li>
 	)

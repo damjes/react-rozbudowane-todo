@@ -1,11 +1,13 @@
 import { useState } from 'react'
 
 import { dostępneStyle } from './moduły/dostępneStyle'
+import { nowaListaZadań, type Zadanie } from './moduły/Zadanie'
 
 import UstalStyl from './komponenty/UstalStyl'
 import WybieraczStylu from './komponenty/WybieraczStylu'
 import TodoLista from './komponenty/TodoLista'
-import { nowaListaZadań, type Zadanie } from './moduły/Zadanie'
+
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 function App() {
 	const [styl, setStyl] = useState(Object.keys(dostępneStyle)[0])
