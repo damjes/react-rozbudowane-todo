@@ -79,7 +79,14 @@ function App() {
 			<UstalStyl styl={styl} ciemny={czyCiemny} />
 			<nav className='navbar navbar-expand-lg text-bg-primary mb-4'>
 				<div className='container-fluid'>
-					<div className='navbar-brand text-reset'>Lista ToDo</div>
+					<div className='navbar-brand text-reset'>
+						<img
+							src='android-chrome-512x512.png'
+							alt='logo'
+							style={{ height: '1.2em', marginRight: '0.3em' }}
+						/>
+						Lista ToDo
+					</div>
 					<div className='text-reset'>{napis}</div>
 				</div>
 			</nav>
