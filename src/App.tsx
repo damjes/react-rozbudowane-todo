@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Activity, useState } from 'react'
 
 import { dostępneStyle } from './moduły/dostępneStyle'
 import { nowaListaZadań, type Zadanie } from './moduły/Zadanie'
@@ -58,30 +58,26 @@ function App() {
 
 	const taby = strony.map(bieżącaStrona => (
 		<li className='nav-item' key={bieżącaStrona.nazwa}>
-			{strona === bieżącaStrona.nazwa ? (
-				<a
-					className='nav-link active'
-					href='#'
-					aria-current='page'
-					onClick={() => setStrona(bieżącaStrona.nazwa)}
-				>
-					{' '}
-					{bieżącaStrona.opis}
-				</a>
-			) : (
-				<a
-					className='nav-link'
-					href='#'
-					onClick={() => setStrona(bieżącaStrona.nazwa)}
-				>
-					{' '}
-					{bieżącaStrona.opis}
-				</a>
-			)}
+			<a
+				className={
+					'nav-link' +
+					(strona === bieżącaStrona.nazwa ? ' active' : '')
+				}
+				href='#'
+				aria-current={strona === bieżącaStrona.nazwa ? 'page' : false}
+				onClick={() => setStrona(bieżącaStrona.nazwa)}
+			>
+				{' '}
+				{bieżącaStrona.opis}
+			</a>
 		</li>
 	))
 
-	const komponentStrony = strony.filter(s => s.nazwa === strona)[0].komponent
+	const karty = strony.map(bieżącaStrona => (
+		<Activity mode={strona === bieżącaStrona.nazwa ? 'visible' : 'hidden'}>
+			<div className='p-3'>{bieżącaStrona.komponent}</div>
+		</Activity>
+	))
 
 	const doZrobienia = zadania.filter(zadanie => !zadanie.wykonane).length
 	const liczbaZadań = zadania.length
@@ -113,7 +109,7 @@ function App() {
 			</nav>
 			<div className='container'>
 				<ul className='nav nav-tabs'>{taby}</ul>
-				<div className='p-3'>{komponentStrony}</div>
+				{karty}
 			</div>
 		</>
 	)
