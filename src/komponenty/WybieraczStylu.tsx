@@ -13,10 +13,12 @@ function WybieraczStylu(props: {
 }) {
 	const ciemnyId = useId()
 
+	const nazwyStylów = Object.keys(dostępneStyle)
+
 	function zmienStyl() {
-		const staryIndeks = dostępneStyle.findIndex(v => v === props.styl)
-		const nowyIndeks = (staryIndeks + 1) % dostępneStyle.length
-		props.zmieniarkaStylu(_ => dostępneStyle[nowyIndeks])
+		const staryIndeks = nazwyStylów.findIndex(v => v === props.styl)
+		const nowyIndeks = (staryIndeks + 1) % nazwyStylów.length
+		props.zmieniarkaStylu(_ => nazwyStylów[nowyIndeks])
 	}
 
 	function wybierzStyl(e: React.ChangeEvent<HTMLSelectElement>) {
@@ -24,7 +26,7 @@ function WybieraczStylu(props: {
 		props.zmieniarkaStylu(_ => nowyStyl)
 	}
 
-	const opcje = dostępneStyle.map(styl => (
+	const opcje = nazwyStylów.map(styl => (
 		<option value={styl} key={styl}>
 			{zDuzej(styl)}
 		</option>

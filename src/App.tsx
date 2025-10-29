@@ -8,7 +8,7 @@ import TodoLista from './komponenty/TodoLista'
 import { nowaListaZadań, type Zadanie } from './moduły/Zadanie'
 
 function App() {
-	const [styl, setStyl] = useState(dostępneStyle[0])
+	const [styl, setStyl] = useState(Object.keys(dostępneStyle)[0])
 	const [czyCiemny, setCzyCiemny] = useState(true)
 	const [zadania, setZadania] = useState<Zadanie[]>(nowaListaZadań())
 
