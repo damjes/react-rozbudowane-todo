@@ -20,8 +20,8 @@ function TodoLista(props: {
 
 	return (
 		<>
-			<p>TodoLista</p>
-			<ul>{listaZadań}</ul>
+			<p>Lista rzeczy do zrobienia</p>
+			<ul className='list-group'>{listaZadań}</ul>
 		</>
 	)
 }
