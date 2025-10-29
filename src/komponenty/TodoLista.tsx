@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { noweZadanie, Priorytet, type Zadanie } from '../moduły/Zadanie'
+import { noweZadanie, type Zadanie } from '../moduły/Zadanie'
 import { generatorZmieniarek, type Zmieniarka } from '../moduły/Zmieniarka'
 
 import KomponentZadania from './KomponentZadania'
