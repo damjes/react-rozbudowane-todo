@@ -1,8 +1,4 @@
-export enum Priorytet {
-	niski,
-	średni,
-	wysoki,
-}
+import { Priorytet } from './Priorytet'
 
 export type Zadanie = {
 	id: string
