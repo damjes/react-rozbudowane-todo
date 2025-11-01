@@ -7,6 +7,7 @@ import UstalStyl from './komponenty/UstalStyl'
 import WybieraczStylu from './komponenty/WybieraczStylu'
 import TodoLista from './komponenty/TodoLista'
 import Ikonka from './komponenty/Ikonka'
+import Copyleft from './komponenty/Copyleft'
 
 function App() {
 	const [styl, setStyl] = useState(Object.keys(dostępneStyle)[0])
@@ -38,7 +39,19 @@ function App() {
 		},
 		{
 			...opakuj('info-circle', 'O aplikacji'),
-			komponent: <p>O aplikacji</p>,
+			komponent: (
+				<>
+					<p>O aplikacji</p>
+					<Copyleft /> 2025 de{' '}
+					<a href='https://github.com/damjes/react-rozbudowane-todo'>
+						wiel. Damjes
+					</a>{' '}
+					sub{' '}
+					<a href='https://github.com/damjes/damjesap'>
+						DamjesaP 2.0
+					</a>
+				</>
+			),
 		},
 	]
 
