@@ -1,5 +1,6 @@
 import { useId, useState } from 'react'
 
+import { ikonkiPriorytetów } from '../moduły/Priorytet'
 import type { Zadanie } from '../moduły/Zadanie'
 import type { Zmieniarka } from '../moduły/Zmieniarka'
 
@@ -50,6 +51,10 @@ function KomponentZadania(props: {
 
 	const tekstZadania = (
 		<label htmlFor={idCzekboksa} className={klasaOpisu}>
+			<Ikonka
+				nazwa={ikonkiPriorytetów[zadanie.priorytet]}
+				dodatkoweKlasy='me-1'
+			/>
 			{zadanie.treść}
 		</label>
 	)
@@ -94,7 +99,7 @@ function KomponentZadania(props: {
 		<button
 			className='btn btn-secondary btn-sm'
 			onClick={() => {
-				setEdycja(null), setCzyUsuwamy(false)
+				;(setEdycja(null), setCzyUsuwamy(false))
 			}}
 		>
 			<Ikonka nazwa='x-circle' opis='Anuluj' />
@@ -117,8 +122,8 @@ function KomponentZadania(props: {
 				{edycja
 					? przyciskZatwierdzeniaEdycji
 					: czyUsuwamy
-					? przyciskZatwierdzeniaUsuwania
-					: przyciskEdycji}
+						? przyciskZatwierdzeniaUsuwania
+						: przyciskEdycji}
 				{czyUsuwamy || edycja ? przyciskAnulowania : przyciskUsuwania}
 			</div>
 		</li>

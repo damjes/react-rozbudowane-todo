@@ -3,3 +3,9 @@ export enum Priorytet {
 	średni,
 	wysoki,
 }
+
+export const ikonkiPriorytetów = {
+	[Priorytet.niski]: 'chevron-compact-down',
+	[Priorytet.średni]: 'chevron-right',
+	[Priorytet.wysoki]: 'chevron-double-up',
+}
