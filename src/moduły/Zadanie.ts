@@ -21,5 +21,9 @@ export function noweZadanie(
 }
 
 export function nowaListaZadań() {
-	return [noweZadanie(), noweZadanie(), noweZadanie()]
+	return [
+		noweZadanie('niski', Priorytet.niski),
+		noweZadanie('średni', Priorytet.średni),
+		noweZadanie('wysoki', Priorytet.wysoki),
+	]
 }
